@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frank</title>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f5f7fa;
+        }
+
+        df-messenger {
+            --df-messenger-bot-message: #859b5d;
+            --df-messenger-button-titlebar-color: #859b5d;
+            --df-messenger-chat-background-color: #ffffff;
+            --df-messenger-font-color: white;
+            --df-messenger-send-icon: #859b5d;
+            --df-messenger-user-message: #6c7d4c;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(192px, 300px);
+            --df-messenger-input-box-color: #ffffff;
+            --df-messenger-input-placeholder-font-color: #666;
+            --df-messenger-input-font-color: #333;
+            --df-messenger-button-titlebar-font-size: 18px;
+            --df-messenger-chat-border-radius: 12px;
+            --df-messenger-message-border-radius: 12px;
+            --df-messenger-input-border-radius: 20px;
+            --df-messenger-input-box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            --df-messenger-chat-padding: 16px;
+        }
+
+        df-messenger-chat {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            border-radius: 16px;
+        }
+
+        df-messenger-message {
+            font-size: 15px;
+            line-height: 1.5;
+            padding: 12px 16px;
+        }
+
+        df-messenger-user-input {
+            margin: 12px;
+        }
+
+        df-messenger-titlebar {
+            display: none;
+        }
+
+        /* More specific selectors to hide the launcher button */
+        df-messenger-launcher,
+        df-messenger div.df-messenger-launcher,
+        df-messenger div[class*="launcher"],
+        df-messenger div[class*="button"] {
+            display: none !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
+        }
+
+        /* Add a cover box to hide the button */
+        .button-cover {
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            top: 50%;
+            left: 50%;
+            transform: translate(102px, 220px);
+            z-index: 1000;
+            background: #f5f7fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-cover"></div> 
+    <df-messenger
+        chat-title="Frank"
+        agent-id="ee6f5d7c-bc2e-4fd8-b917-7a9d9226f1e2"
+        language-code="en"
+        expand="true"
+    ></df-messenger>
+</body>
+</html>
